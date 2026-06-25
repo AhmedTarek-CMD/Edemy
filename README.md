@@ -237,11 +237,11 @@ Frontend Developer
 * Tailwind CSS
 * Vite
 
-📧 Email: [your-email@example.com](mailto:your-email@example.com)
+📧 Email: ahmedtarekofficial799@gmail.com
 
-💼 LinkedIn: https://linkedin.com/in/your-profile
+💼 LinkedIn: https://www.linkedin.com/in/ahmed-tarek-a06341322/
 
-🐙 GitHub: https://github.com/your-username
+🐙 GitHub: https://github.com/AhmedTarek-CMD
 
 ---
 
