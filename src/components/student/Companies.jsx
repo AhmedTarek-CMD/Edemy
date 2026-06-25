@@ -39,7 +39,6 @@ const Companies = () => {
         Trusted by Learners From
       </motion.p>
 
-      {/* Logos */}
       <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 mt-8">
         {companies.map((company, index) => (
           <motion.div

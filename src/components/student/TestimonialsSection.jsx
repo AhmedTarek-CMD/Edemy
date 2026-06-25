@@ -5,7 +5,6 @@ import { assets, dummyTestimonial } from "../../assets/assets";
 const TestimonialsSection = () => {
   return (
     <section className="pb-20 xl:px-70 lg:px-40 px-8 text-center">
-      {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +21,6 @@ const TestimonialsSection = () => {
         </p>
       </motion.div>
 
-      {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
         {dummyTestimonial.map((testimonial, index) => (
           <motion.div
@@ -56,7 +54,6 @@ const TestimonialsSection = () => {
               </div>
             </div>
 
-            {/* Body */}
             <div className="p-6">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (

@@ -5,7 +5,6 @@ import { assets } from "../../assets/assets";
 const CallToAction = () => {
   return (
     <section className="relative overflow-hidden py-28 px-8">
-      {/* Background glow */}
       <div className="absolute inset-0 flex justify-center pointer-events-none">
         <div className="w-125 h-125 bg-blue-300/20 blur-[120px] rounded-full" />
       </div>
@@ -28,7 +27,6 @@ const CallToAction = () => {
           careers, and growing faster.
         </p>
 
-        {/* Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
           <motion.button
             whileHover={{

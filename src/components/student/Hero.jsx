@@ -6,10 +6,8 @@ import SearchBar from "./SearchBar";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden flex flex-col items-center justify-center w-full md:pt-34 pt-20 px-7 md:px-0 text-center bg-linear-to-b from-cyan-100/70 to-white">
-      {/* Background glow */}
       <div className="absolute top-30 left-1/2 -translate-x-1/2 w-125 h-125 bg-blue-300/20 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Content */}
       <motion.div
         className="relative z-10 flex flex-col items-center"
         initial="hidden"
@@ -23,7 +21,6 @@ const Hero = () => {
           },
         }}
       >
-        {/* Heading */}
         <motion.h1
           variants={{
             hidden: { opacity: 0, y: 30 },
@@ -51,7 +48,6 @@ const Hero = () => {
           </span>
         </motion.h1>
 
-        {/* Description */}
         <motion.p
           variants={{
             hidden: { opacity: 0, y: 20 },
@@ -77,7 +73,6 @@ const Hero = () => {
           professional goals.
         </motion.p>
 
-        {/* Search */}
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 25 },

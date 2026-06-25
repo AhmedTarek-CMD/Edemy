@@ -4,7 +4,6 @@ import { useProgress } from "../../context/ProgressContext";
 import Footer from "../../components/student/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 
-/* ─── Variants ───────────────────────────────────────────────── */
 const containerVariants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1 } },
@@ -19,7 +18,6 @@ const rowVariants = {
   },
 };
 
-/* ─── Shared shimmer progress bar ────────────────────────────── */
 const ProgressBar = ({ pct }) => (
   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
     <motion.div
@@ -35,7 +33,6 @@ const ProgressBar = ({ pct }) => (
   </div>
 );
 
-/* ─── Completion badge ────────────────────────────────────────── */
 const CompletionBadge = ({ pct }) => {
   if (pct !== 100) return null;
   return (
@@ -59,7 +56,6 @@ const CompletionBadge = ({ pct }) => {
   );
 };
 
-/* ─── Main Component ─────────────────────────────────────────── */
 const MyEnrollments = () => {
   const { enrolledCourses, calculateCourseDuration, navigate } =
     useContext(AddContext);
@@ -68,7 +64,6 @@ const MyEnrollments = () => {
   return (
     <>
       <div className="relative overflow-hidden min-h-screen bg-slate-50">
-        {/* Animated background blobs */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
           <div
@@ -87,7 +82,6 @@ const MyEnrollments = () => {
           transition={{ duration: 0.8 }}
           className="md:px-36 px-5 py-12"
         >
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -102,7 +96,6 @@ const MyEnrollments = () => {
             </p>
           </motion.div>
 
-          {/* Table */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -125,7 +118,6 @@ const MyEnrollments = () => {
                 animate="show"
               >
                 {enrolledCourses.map((course, index) => {
-                  /* ── Pull live progress from shared context ── */
                   const { lectureCompleted, totalLectures, pct } =
                     getCourseProgress(course._id, course);
                   const isFullyDone = pct === 100;
@@ -137,7 +129,6 @@ const MyEnrollments = () => {
                       whileHover={{ scale: 1.01 }}
                       className="border-b border-gray-200 transition-all duration-300 hover:bg-blue-50/50"
                     >
-                      {/* Course info + progress bar */}
                       <td className="px-4 py-5">
                         <div className="flex items-center gap-4">
                           <motion.img
@@ -181,14 +172,12 @@ const MyEnrollments = () => {
                         </div>
                       </td>
 
-                      {/* Duration */}
                       <td className="px-6 py-5 max-sm:hidden">
                         <span className="font-medium text-gray-700">
                           {calculateCourseDuration(course)}
                         </span>
                       </td>
 
-                      {/* Lecture count — live from context */}
                       <td className="px-6 py-5 max-sm:hidden">
                         <AnimatePresence mode="wait">
                           <motion.span
@@ -209,7 +198,6 @@ const MyEnrollments = () => {
                         <span className="text-gray-500 ml-1">Lectures</span>
                       </td>
 
-                      {/* CTA button */}
                       <td className="px-6 py-5">
                         <motion.button
                           whileHover={{

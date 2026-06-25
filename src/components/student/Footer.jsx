@@ -12,7 +12,6 @@ const Footer = () => {
       className="text-left bg-gray-800 md:px-36 mt-10 w-full overflow-hidden"
     >
       <div className="flex flex-col md:flex-row items-start justify-center px-8 md:px-0 gap-10 md:gap-32 py-12 border-b border-white/20">
-        {/* Left */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +34,6 @@ const Footer = () => {
           </p>
         </motion.div>
 
-        {/* Company */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +68,6 @@ const Footer = () => {
           </ul>
         </motion.div>
 
-        {/* Newsletter */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +112,6 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Bottom */}
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

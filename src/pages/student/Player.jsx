@@ -83,7 +83,6 @@ const thumbnailVariants = {
   },
 };
 
-/* ─── Sub-components ─────────────────────────────────────────── */
 const PulseRing = () => (
   <span className="relative flex h-3 w-3 shrink-0">
     <motion.span
@@ -144,7 +143,6 @@ const CompletionToast = ({ show }) => (
   </AnimatePresence>
 );
 
-/* ─── Main Component ─────────────────────────────────────────── */
 const Player = () => {
   const { enrolledCourses, calculateChapterTime } = useContext(AddContext);
   const { toggleLecture, isLectureDone, getCourseProgress } = useProgress();
@@ -208,7 +206,6 @@ const Player = () => {
         animate="visible"
         className="relative z-10 p-4 sm:p-10 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:px-36"
       >
-        {/* ── LEFT: Course Structure ── */}
         <div className="text-gray-800">
           <motion.div variants={slideUp} ref={headerRef}>
             <motion.h2
@@ -480,7 +477,6 @@ const Player = () => {
           </div>
         </div>
 
-        {/* ── RIGHT: Video Player ── */}
         <motion.div variants={slideLeft} className="md:mt-10 md:mb-30">
           <div className="sticky top-6">
             <AnimatePresence mode="wait">

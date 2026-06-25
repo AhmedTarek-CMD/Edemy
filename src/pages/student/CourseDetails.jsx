@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import humanizeDuration from "humanize-duration";
 import Footer from "../../components/student/Footer";
 
-// Reusable fade-up variant for staggered children
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({
@@ -18,7 +17,6 @@ const fadeUp = {
   }),
 };
 
-// Slide-in from right for the sidebar card
 const slideInRight = {
   hidden: { opacity: 0, x: 60 },
   visible: {
@@ -60,7 +58,6 @@ const CourseDetails = () => {
   return courseData ? (
     <>
       <div className="relative flex flex-col-reverse md:flex-row gap-10 items-start px-8 md:px-36 text-left pt-20 md:pt-30 justify-between overflow-hidden">
-        {/* Animated gradient background */}
         <motion.div
           className="absolute inset-0 z-0 bg-linear-to-b from-cyan-100/70"
           initial={{ opacity: 0 }}
@@ -68,7 +65,6 @@ const CourseDetails = () => {
           transition={{ duration: 0.8 }}
         />
 
-        {/* Left Content — staggered fade-up */}
         <motion.div
           className="max-w-xl z-10 text-gray-500"
           initial="hidden"
@@ -78,7 +74,6 @@ const CourseDetails = () => {
             visible: { transition: { staggerChildren: 0.1 } },
           }}
         >
-          {/* Title */}
           <motion.h1
             className="text-2xl md:text-4xl font-semibold text-gray-800"
             variants={fadeUp}
@@ -86,7 +81,6 @@ const CourseDetails = () => {
             {courseData.courseTitle}
           </motion.h1>
 
-          {/* Description snippet */}
           <motion.p
             className="text-sm md:text-base pt-4"
             variants={fadeUp}
@@ -95,7 +89,6 @@ const CourseDetails = () => {
             }}
           />
 
-          {/* Ratings row */}
           <motion.div
             className="flex items-center space-x-2 mt-2"
             variants={fadeUp}
@@ -124,12 +117,10 @@ const CourseDetails = () => {
             <p>{courseData.enrolledStudents.length} students</p>
           </motion.div>
 
-          {/* Author */}
           <motion.p className="text-sm md:text-base mt-4" variants={fadeUp}>
             Course By <span className="underline text-blue-600">Edemy</span>
           </motion.p>
 
-          {/* Course Structure */}
           <motion.div className="pt-8 text-gray-800" variants={fadeUp}>
             <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-5">
               Course Structure
@@ -225,7 +216,6 @@ const CourseDetails = () => {
             </div>
           </motion.div>
 
-          {/* Course Description */}
           <motion.div
             className="py-20 text-sm md:text-lg"
             variants={fadeUp}
@@ -245,14 +235,12 @@ const CourseDetails = () => {
           </motion.div>
         </motion.div>
 
-        {/* Sidebar Card — slides in from the right */}
         <motion.div
           className="max-w-106 shadow z-10 md:rounded-none overflow-hidden bg-white min-w-75 sm:min-w-105"
           variants={slideInRight}
           initial="hidden"
           animate="visible"
         >
-          {/* Thumbnail with subtle zoom on hover */}
           <motion.img
             src={courseData.courseThumbnail}
             alt={courseData.courseTitle}
@@ -262,7 +250,6 @@ const CourseDetails = () => {
           />
 
           <div className="p-5">
-            {/* Urgency badge */}
             <motion.div
               className="flex items-center gap-2"
               initial={{ opacity: 0 }}
@@ -279,7 +266,6 @@ const CourseDetails = () => {
               </p>
             </motion.div>
 
-            {/* Pricing */}
             <motion.div
               className="flex gap-3 items-center pt-2"
               initial={{ opacity: 0, y: 10 }}
@@ -301,7 +287,6 @@ const CourseDetails = () => {
               </p>
             </motion.div>
 
-            {/* Course meta icons */}
             <motion.div
               className="flex items-center text-sm md:text-lg gap-4 pt-2 md:pt-4 text-gray-500"
               initial={{ opacity: 0 }}
@@ -323,7 +308,6 @@ const CourseDetails = () => {
               </div>
             </motion.div>
 
-            {/* Enroll button with pulse on hover */}
             <motion.button
               className="mt-4 md:mt-6 bg-blue-600 text-white font-medium py-3 w-full cursor-pointer"
               whileHover={{ scale: 1.02, backgroundColor: "#1d4ed8" }}
@@ -333,7 +317,6 @@ const CourseDetails = () => {
               {isAlreadyEnrolled ? "Already Enrolled" : "Enroll Now"}
             </motion.button>
 
-            {/* What's included list */}
             <motion.div
               className="pt-6"
               initial={{ opacity: 0, y: 12 }}

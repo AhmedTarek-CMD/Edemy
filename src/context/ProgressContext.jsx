@@ -1,21 +1,10 @@
 import { createContext, useContext, useState, useCallback } from "react";
 
-/**
- * ProgressContext
- *
- * Stores completed lectures keyed by courseId.
- * Shape: { [courseId]: { "[chapterIdx]-[lectureIdx]": true } }
- *
- * Wrap your app (or at least the routes that include Player + MyEnrollments)
- * with <ProgressProvider> and consume via useProgress().
- */
 export const ProgressContext = createContext(null);
 
 export const ProgressProvider = ({ children }) => {
-  // { courseId: { "0-0": true, "0-1": true, ... } }
   const [progressMap, setProgressMap] = useState({});
 
-  /** Toggle a single lecture complete / incomplete */
   const toggleLecture = useCallback((courseId, chapterIdx, lectureIdx) => {
     const key = `${chapterIdx}-${lectureIdx}`;
     setProgressMap((prev) => {
@@ -27,14 +16,12 @@ export const ProgressProvider = ({ children }) => {
     });
   }, []);
 
-  /** True if a specific lecture is marked complete */
   const isLectureDone = useCallback(
     (courseId, chapterIdx, lectureIdx) =>
       !!(progressMap[courseId] ?? {})[`${chapterIdx}-${lectureIdx}`],
     [progressMap],
   );
 
-  /** { lectureCompleted, totalLectures, pct } for a given course */
   const getCourseProgress = useCallback(
     (courseId, courseData) => {
       if (!courseData) return { lectureCompleted: 0, totalLectures: 0, pct: 0 };
@@ -63,7 +50,6 @@ export const ProgressProvider = ({ children }) => {
   );
 };
 
-/** Convenience hook */
 export const useProgress = () => {
   const ctx = useContext(ProgressContext);
   if (!ctx)
