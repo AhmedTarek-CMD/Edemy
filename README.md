@@ -14,7 +14,7 @@ Designed with a clean UI, reusable components, responsive layouts, and smooth an
 
 ## 📂 GitHub Repository
 
-🔗 **Repository:** https://github.com/your-username/e-learning-platform
+🔗 **Repository:** https://github.com/AhmedTarek-CMD/Edemy
 
 ---
 
