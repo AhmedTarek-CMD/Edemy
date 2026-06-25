@@ -8,7 +8,7 @@ Designed with a clean UI, reusable components, responsive layouts, and smooth an
 
 ## 🌐 Live Demo
 
-🔗 **Website:** https://your-live-demo.vercel.app
+🔗 **Website:** https://edemy-red-one.vercel.app/
 
 ---
 
